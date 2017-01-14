@@ -41,6 +41,7 @@ minetest.register_node("c_doors:steel_Ldoor_open", {
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	drop = "c_doors:steel_Ldoor",
 	groups = {not_in_creative_inventory = 1},
 	sounds = default.node_sound_metal_defaults(),
 	selection_box = {
@@ -104,6 +105,7 @@ minetest.register_node("c_doors:steel_Rdoor_open", {
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	drop = "c_doors:steel_Rdoor",
 	groups = {not_in_creative_inventory = 1},
 	sounds = default.node_sound_metal_defaults(),
 	sound_open = "doors_steel_door_open",
@@ -163,6 +165,7 @@ minetest.register_node("c_doors:dbl_win_sml_open", {
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	drop = "c_doors:dbl_win_sml",
 	groups = {not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
@@ -212,6 +215,7 @@ minetest.register_node("c_doors:dbl_win_lg_open", {
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	drop = "c_doors:dbl_win_lg",
 	groups = {not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
@@ -257,6 +261,7 @@ minetest.register_node("c_doors:chest_open", {
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
+	drop = "c_doors:chest",
 	groups = {not_in_creative_inventory = 1},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = {

@@ -27,7 +27,7 @@ minetest.register_node("c_doors:steel_Ldoor", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:steel_Ldoor_open", param2 = node.param2})
 		minetest.sound_play("metal_open", {gain = 0.20, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 minetest.register_node("c_doors:steel_Ldoor_open", {
@@ -58,7 +58,7 @@ minetest.register_node("c_doors:steel_Ldoor_open", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:steel_Ldoor", param2 = node.param2})
 		minetest.sound_play("metal_close", {gain = 0.15, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 
@@ -90,7 +90,7 @@ minetest.register_node("c_doors:steel_Rdoor", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:steel_Rdoor_open", param2 = node.param2})
 		minetest.sound_play("metal_open", {gain = 0.20, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 minetest.register_node("c_doors:steel_Rdoor_open", {
@@ -123,7 +123,7 @@ minetest.register_node("c_doors:steel_Rdoor_open", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:steel_Rdoor", param2 = node.param2})
 		minetest.sound_play("metal_close", {gain = 0.15, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 
@@ -150,7 +150,7 @@ minetest.register_node("c_doors:dbl_win_sml", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:dbl_win_sml_open", param2 = node.param2})
 		minetest.sound_play("doors_glass_door_open", {gain = 0.50, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 minetest.register_node("c_doors:dbl_win_sml_open", {
@@ -175,7 +175,7 @@ minetest.register_node("c_doors:dbl_win_sml_open", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:dbl_win_sml", param2 = node.param2})
 		minetest.sound_play("doors_glass_door_close", {gain = 0.50, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 minetest.register_node("c_doors:dbl_win_lg", {
@@ -199,7 +199,7 @@ minetest.register_node("c_doors:dbl_win_lg", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:dbl_win_lg_open", param2 = node.param2})
 		minetest.sound_play("doors_glass_door_open", {gain = 0.50, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 minetest.register_node("c_doors:dbl_win_lg_open", {
@@ -224,7 +224,7 @@ minetest.register_node("c_doors:dbl_win_lg_open", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:dbl_win_lg", param2 = node.param2})
 		minetest.sound_play("doors_glass_door_close", {gain = 0.50, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 
@@ -243,16 +243,14 @@ minetest.register_node("c_doors:chest", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:chest_open", param2 = node.param2})
 		minetest.sound_play("doors_door_open", {gain = 0.20, max_hear_distance = 2})
-	end,	
+	end,
 })
 
 minetest.register_node("c_doors:chest_open", {
 	description = "Open Chest",
 	drawtype = "mesh",
 	mesh = "chest_open.obj",
-	tiles = {"default_chest_top.png", "default_chest_top.png",
-		"default_chest_side.png", "default_chest_side.png",
-		"default_chest_side.png", "default_chest_front.png"},
+	tiles = {"default_chest_top.png", "default_chest_side.png", "default_chest_front.png"},
 	--use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -280,5 +278,5 @@ minetest.register_node("c_doors:chest_open", {
 	on_rightclick = function(pos, node, puncher)
 		minetest.swap_node(pos, {name = "c_doors:chest", param2 = node.param2})
 		minetest.sound_play("doors_door_close", {gain = 0.20, max_hear_distance = 2})
-	end,	
+	end,
 })

@@ -134,19 +134,30 @@ minetest.register_node("c_doors:steel_Rdoor_open", {
 minetest.register_node("c_doors:dbl_win_sml", {
 	description = "Small Double Window",
 	drawtype = "nodebox",
-	tiles = {"dbl_win_sml_glass.png"},
+	tiles = {"default_obsidian.png", "default_obsidian.png", "dbl_win_sml_glass.png"},
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
+	groups = {cracky = 3},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, 0, 0.5, 0.5, 0.0625},
+			{-0.5, -0.5, -0.027133, -0.4375, 0.5, 0.027133},
+			{-0.5, -0.5, -0.027133, 0.5, -0.4375, 0.027133},
+			{0.4375, -0.5, -0.027133, 0.5, 0.5, 0.027133},
+			{-0.0625, -0.5, -0.027133, 0.0625, 0.5, 0.027133},
+			{-0.5, 0.4375, -0.027133, 0.5, 0.5, 0.027133},
+--			{-0.4375, -0.4375, -0.02, -0.0625, 0.4375, 0.02},  --transparent feild
+--			{0.0625, -0.4375, -0.02, 0.4375, 0.4375, 0.02},  --transparent feild
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.03, 0.5, 0.5, 0.03},
 		},
 	},
 	on_rightclick = function(pos, node, puncher)
@@ -158,21 +169,43 @@ minetest.register_node("c_doors:dbl_win_sml", {
 minetest.register_node("c_doors:dbl_win_sml_open", {
 	description = "Small Double Window Open",
 	drawtype = "nodebox",
-	tiles = {"dbl_win_sml_glass.png"},
+	tiles = {"default_obsidian.png", "default_obsidian.png",
+    "dbl_win_sml_glass.png"},
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	drop = "c_doors:dbl_win_sml",
-	groups = {not_in_creative_inventory = 1},
+	groups = {cracky = 3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, -0.4375, 0.5, 0.0625},
-			{0.4375, -0.5, -0.5, 0.5, 0.5, 0.0625},
+			{0.472867, -0.5, -0.5, 0.5, 0.5, -0.4375},
+			{0.472867, -0.5, -0.0625, 0.5, 0.5, 0},
+			{-0.5, -0.5, -0.5, -0.472867, 0.5, -0.4375},
+			{-0.5, -0.5, -0.0625, -0.472867, 0.5, 0},
+			{0.472867, 0.4375, -0.5, 0.5, 0.5, 0},
+			{-0.5, 0.4375, -0.5, -0.472867, 0.5, 0},
+			{-0.5, -0.5, -0.5, -0.472867, -0.4375, 0},
+			{0.472867, -0.5, -0.5, 0.5, -0.4375, 0},
+--			{-0.472867, -0.4375, -0.4375, -0.5, 0.4375, -0.0625},  --transparent feild
+--			{0.472867, -0.4375, -0.4375, 0.5, 0.4375, -0.0625},  --transparent feild
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, -0.4375, 0.5, 0},
+			{0.4375, -0.5, -0.5, 0.5, 0.5, 0},
+		},
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, -0.472867, 0.5, 0},
+			{0.472867, -0.5, -0.5, 0.5, 0.5, 0},
 		},
 	},
 	on_rightclick = function(pos, node, puncher)
@@ -184,19 +217,35 @@ minetest.register_node("c_doors:dbl_win_sml_open", {
 minetest.register_node("c_doors:dbl_win_lg", {
 	description = "Large Double Window",
 	drawtype = "nodebox",
-	tiles = {"dbl_win_sml_glass.png"},
+	tiles = {"default_obsidian.png", "default_obsidian.png",
+    "dbl_win_sml_glass.png"},
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
-	groups = {cracky = 1, level = 2},
+	groups = {cracky = 3},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, 0, 0.5, 1.5, 0.0625},
+			{-0.5, -0.5, -0.027133, -0.4375, 1.5, 0.027133},
+			{-0.5, -0.5, -0.027133, 0.5, -0.4375, 0.027133},
+			{0.4375, -0.5, -0.027133, 0.5, 1.5, 0.027133},
+			{-0.0625, -0.5, -0.027133, 0.0625, 1.5, 0.027133},
+			{-0.5, 0.4375, -0.027133, 0.5, 0.5625, 0.027133},
+			{-0.5, 1.4375, -0.027133, 0.5, 1.5, 0.027133},
+--			{-0.4375, 0.5625, -0.02, -0.0625, 1.4375, 0.02},  --transparent feild
+--			{0.0625, 0.5625, -0.02, 0.4375, 1.4375, 0.02},  --transparent feild
+--			{0.0625, -0.4375, -0.02, 0.4375, 0.4375, 0.02},  --transparent feild
+--			{-0.4375, -0.4375, -0.02, -0.0625, 0.4375, 0.02},  --transparent feild
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.03, 0.5, 1.5, 0.03},
 		},
 	},
 	on_rightclick = function(pos, node, puncher)
@@ -205,10 +254,13 @@ minetest.register_node("c_doors:dbl_win_lg", {
 	end,
 })
 
+
+
 minetest.register_node("c_doors:dbl_win_lg_open", {
 	description = "Large Double Window Open",
-	drawtype = "nodebox",
-	tiles = {"dbl_win_sml_glass.png"},
+    drawtype = "nodebox",
+	tiles = {"default_obsidian.png", "default_obsidian.png",
+    "dbl_win_sml_glass.png"},
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -216,13 +268,39 @@ minetest.register_node("c_doors:dbl_win_lg_open", {
 	sunlight_propogates = true,
 	is_ground_content = false,
 	drop = "c_doors:dbl_win_lg",
-	groups = {not_in_creative_inventory = 1},
+	groups = {cracky = 3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, -0.4375, 1.5, 0.0625}, -- NodeBox1
-			{0.4375, -0.5, -0.5, 0.5, 1.5, 0.0625},
+			{0.472867, -0.5, -0.5, 0.5, 1.5, -0.4375},
+			{0.472867, -0.5, -0.0625, 0.5, 1.5, 0},
+			{-0.5, -0.5, -0.5, -0.472867, 1.5, -0.4375},
+			{-0.5, -0.5, -0.0625, -0.472867, 1.5, 0},
+			{0.472867, 0.4375, -0.5, 0.5, 0.5625, 0},
+			{-0.5, 0.4375, -0.5, -0.472867, 0.5625, 0},
+			{-0.5, -0.5, -0.5, -0.472867, -0.4375, 0},
+			{0.472867, -0.5, -0.5, 0.5, -0.4375, 0},
+			{0.472867, 1.4375, -0.5, 0.5, 1.5, 0},
+			{-0.5, 1.4375, -0.5, -0.472867, 1.5, -0.0625},
+--			{0.472867, 0.5625, -0.4375, 0.5, 1.4375, -0.0625},  --transparent feild
+--			{0.472867, -0.4375, -0.4375, 0.5, 0.4375, -0.0625},  --transparent feild
+--			{-0.472867, 0.5625, -0.4375, -0.5, 1.4375, -0.0625},  --transparent feild
+--			{-0.472867, -0.4375, -0.4375, -0.5, 0.4375, -0.0625},  --transparent feild
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, -0.4375, 1.5, 0},
+			{0.4375, -0.5, -0.5, 0.5, 1.5, 0},
+		},
+	},
+	collision_box = {
+		type = "fixed",
+		fixed = {
+			{0.472867, -0.5, -0.5, 0.5, 1.5, 0},
+			{-0.5, -0.5, -0.5, -0.472867, 1.5, 0},
 		},
 	},
 	on_rightclick = function(pos, node, puncher)
@@ -230,7 +308,6 @@ minetest.register_node("c_doors:dbl_win_lg_open", {
 		minetest.sound_play("doors_glass_door_close", {gain = 0.50, max_hear_distance = 2})
 	end,
 })
-
 
 -- An Animated Chest needs further development
 

@@ -5,10 +5,9 @@ c_doors = {}
 
 -- Register Door Nodes
 c_doors.door = {
-	{"steel", "Steel", {cracky = 1, door =1}, default.node_sound_metal_defaults(), "metal", "default:steelblock"},
-	{"obsidian_glass", "Obsidian Glass", {cracky = 1, level = 2, door =1}, default.node_sound_glass_defaults(), "doors_glass_door", "default:obsidian_glass"},
-	{"glass", "Glass",
-{"glass", "Glass", {cracky = 3, door =1}, default.node_sound_glass_defaults(), "doors_glass_door", "default:glass"},
+    {"steel", "Steel", {cracky = 1, door =1}, default.node_sound_metal_defaults(), "metal", "default:steelblock"},
+	{"obsidian_glass", "Obsidian Glass", {cracky = 1, level = 2, door =1}, default.node_sound_glass_defaults(), "glass", "default:obsidian_glass"},
+	{"glass", "Glass", {cracky = 3, door =1}, default.node_sound_glass_defaults(), "glass", "default:glass"},
 	{"wood", "Wood", {choppy = 2, door =1}, default.node_sound_wood_defaults(), "doors_door", "default:wood"},
 }
 

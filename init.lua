@@ -3,9 +3,9 @@ screwdriver = screwdriver or {}
 
 c_doors = {}
 
---Register Door Nodes
+-- Register Door Nodes
 c_doors.door = {
-    {"steel", "Steel", {cracky = 1, door =1}, default.node_sound_metal_defaults(), "metal", "default:steelblock"},
+	{"steel", "Steel", {cracky = 1, door =1}, default.node_sound_metal_defaults(), "metal", "default:steelblock"},
 	{"obsidian_glass", "Obsidian Glass", {cracky = 1, level = 2, door =1}, default.node_sound_glass_defaults(), "glass", "default:obsidian_glass"},
 	{"glass", "Glass", {cracky = 3, door =1}, default.node_sound_glass_defaults(), "glass", "default:glass"},
 	{"wood", "Wood", {choppy = 2, door =1}, default.node_sound_wood_defaults(), "doors_door", "default:wood"},
@@ -15,8 +15,8 @@ for _, row in ipairs(c_doors.door) do
 	local name = row[1]
 	local desc = row[2]
 	local mat_groups = row[3]
-    local mat_sound = row[4]
-    local door_sound = row[5]
+	local mat_sound = row[4]
+	local door_sound = row[5]
 	local craft_material = row[6]
 
 minetest.register_node("c_doors:" ..name.. "_Ldoor", {
@@ -29,7 +29,7 @@ minetest.register_node("c_doors:" ..name.. "_Ldoor", {
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	groups = mat_groups,
@@ -53,12 +53,12 @@ minetest.register_node("c_doors:" ..name.. "_Ldoor_open", {
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	groups = mat_groups,
-    drop = "c_doors:" ..name.. "_Ldoor",
+	drop = "c_doors:" ..name.. "_Ldoor",
 	sounds = mat_sound,
 	selection_box = {
 		type = "fixed",
@@ -88,7 +88,7 @@ minetest.register_node("c_doors:" ..name.. "_Rdoor", {
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	groups = mat_groups,
@@ -112,12 +112,12 @@ minetest.register_node("c_doors:" ..name.. "_Rdoor_open", {
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	legacy_facedir_simple = true,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	groups = mat_groups,
-    drop = "c_doors:" ..name.. "_Rdoor",
+	drop = "c_doors:" ..name.. "_Rdoor",
 	sounds = mat_sound,
 	selection_box = {
 		type = "fixed",
@@ -139,44 +139,44 @@ minetest.register_node("c_doors:" ..name.. "_Rdoor_open", {
 --
 -- Crafting
 --
-	minetest.register_craft({
-		output = "c_doors:" ..name.. "_Ldoor",
-		recipe = {
-			{"", craft_material , ""},
-            {"", craft_material, ""},
-			{"", craft_material , ""},
-		}
-	})
+minetest.register_craft({
+	output = "c_doors:" ..name.. "_Ldoor",
+	recipe = {
+		{"", craft_material , ""},
+		{"", craft_material, ""},
+		{"", craft_material , ""},
+	}
+})
 
-	minetest.register_craft({
-		output = "c_doors:" ..name.. "_Rdoor",
-		recipe = {
-			{"c_doors:" ..name.. "_Ldoor",},
-		}
-	})
+minetest.register_craft({
+	output = "c_doors:" ..name.. "_Rdoor",
+	recipe = {
+		{"c_doors:" ..name.. "_Ldoor"},
+	}
+})
 
-	minetest.register_craft({
-		output = "c_doors:" ..name.. "_Ldoor",
-		recipe = {
-			{"c_doors:" ..name.. "_Rdoor",},
-		}
-	})
+minetest.register_craft({
+	output = "c_doors:" ..name.. "_Ldoor",
+	recipe = {
+		{"c_doors:" ..name.. "_Rdoor"},
+	}
+})
 
 end
 
---Register Window Nodes
+-- Register Window Nodes
 c_doors.windowed = {
-    {"steel", "Steel", "default_steel_block.png", "c_doors_dble_steel.png", "default:steelblock"},
+	{"steel", "Steel", "default_steel_block.png", "c_doors_dble_steel.png", "default:steelblock"},
 	{"obsidian_glass", "Obsidian Glass", "default_obsidian_block.png", "c_doors_dble_obsidian_glass.png", "default:obsidian_glass"},
 	{"glass", "Glass", "c_doors_dble_glass_sides.png", "c_doors_dble_glass.png", "default:glass"},
-	{"wood", "Wood", "default_wood.png", "c_doors_dble_wood.png", "default:wood"},
+	{"wood", "Wood", "c_doors_dble_wood_sides.png", "c_doors_dble_wood.png", "default:wood"},
 }
 
 for _, row in ipairs(c_doors.windowed) do
 	local name = row[1]
 	local desc = row[2]
 	local side_tile = row[3]
-    local face_tile = row[4]
+	local face_tile = row[4]
 	local craft_material = row[5]
 
 minetest.register_node("c_doors:dbl_" ..name.. "_win_sml", {
@@ -186,7 +186,7 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_sml", {
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	groups = {cracky = 3},
@@ -221,7 +221,7 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_sml_open", {
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	drop = "c_doors:dbl_" ..name.. "_win_sml",
@@ -271,7 +271,7 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_lg", {
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	groups = {cracky = 3},
@@ -309,13 +309,13 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_lg_open", {
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	drop = "c_doors:dbl_" ..name.. "_win_lg",
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
-    node_box = {
+	node_box = {
 		type = "fixed",
 		fixed = {
 			{0.472867, -0.5, -0.5, 0.5, 1.5, -0.4375},
@@ -356,22 +356,22 @@ minetest.register_node("c_doors:dbl_" ..name.. "_win_lg_open", {
 --
 -- Crafting
 --
-	minetest.register_craft({
-		output = "c_doors:dbl_" ..name.. "_win_lg",
-		recipe = {
-			{"c_doors:dbl_" ..name.. "_win_sml"},
-			{"c_doors:dbl_" ..name.. "_win_sml"},
-		}
-	})
+minetest.register_craft({
+	output = "c_doors:dbl_" ..name.. "_win_lg",
+	recipe = {
+		{"c_doors:dbl_" ..name.. "_win_sml"},
+		{"c_doors:dbl_" ..name.. "_win_sml"},
+	}
+})
 
-	minetest.register_craft({
-		output = "c_doors:dbl_" ..name.. "_win_sml 4",
-		recipe = {
-			{ craft_material , "default:glass", craft_material , },
-            {"default:glass", "", "default:glass"},
-			{ craft_material , "default:glass", craft_material , },
-		}
-	})
+minetest.register_craft({
+	output = "c_doors:dbl_" ..name.. "_win_sml 4",
+	recipe = {
+		{ craft_material , "default:glass", craft_material},
+		{"default:glass", "", "default:glass"},
+		{ craft_material , "default:glass", craft_material},
+	}
+})
 
 end
 
@@ -379,10 +379,10 @@ end
 minetest.register_node("c_doors:chest", {
 	description = "Chest",
 	tiles = {"default_chest_top.png", "default_chest_top.png",
-		"default_chest_side.png", "default_chest_side.png",
-		"default_chest_side.png", "default_chest_front.png"},
+	"default_chest_side.png", "default_chest_side.png",
+	"default_chest_side.png", "default_chest_front.png"},
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	is_ground_content = false,
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
 	sounds = default.node_sound_wood_defaults(),
@@ -399,7 +399,7 @@ minetest.register_node("c_doors:chest_open", {
 	tiles = {"default_chest_top.png", "default_chest_side.png", "default_chest_front.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-    on_rotate = screwdriver.rotate_simple,
+	on_rotate = screwdriver.rotate_simple,
 	sunlight_propogates = true,
 	is_ground_content = false,
 	drop = "c_doors:chest",

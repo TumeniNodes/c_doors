@@ -1,6 +1,6 @@
-# Blender v2.78 (sub 0) OBJ File: 'centered_Ldoor.obj'
+# Blender v2.78 (sub 0) OBJ File: 'centered_door.obj'
 # www.blender.org
-mtllib centered_Ldoor.mtl
+mtllib centered_door.mtl
 o nodebox1
 v 0.501415 -0.483015 0.081964
 v 0.501415 1.516985 0.081964

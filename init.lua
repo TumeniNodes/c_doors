@@ -1,4 +1,4 @@
--- c_doors by tumeninodes Jan 2017
+-- c_doors by TumeniNodes, Nathan.S, and Napiophelios Jan 2017
 screwdriver = screwdriver or {}
 
 c_doors = {}

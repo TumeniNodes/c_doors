@@ -5,6 +5,9 @@ Nathan.S (Blender work on the animated chest)
 
 Napiophelios (Contributions in the Lua code)
 
+rgspro "Richard Jeffries" (A nice review video with good comments = motivation)
+see the video there --> https://youtu.be/hScU_tm3CSI
+
 Work from contributors can be followed at https://github.com/TumeniNodes/c_doors
 
 For this mod's forum thread go to https://forum.minetest.net/viewtopic.php?f=9&t=16423

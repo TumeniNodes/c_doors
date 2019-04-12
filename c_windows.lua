@@ -7,7 +7,7 @@ c_doors.windowed = {
 		"Steel",
 		"c_doors_dble_steel_sides.png", 
 		"c_doors_dble_steel.png",
-		"default:steelblock"
+		"default:steel_ingot"
 	},
 	{
 		"obsidian_glass", 
@@ -289,9 +289,11 @@ for _, row in ipairs(c_doors.windowed) do
 	end
 	
 	minetest.register_node("c_doors:dbl_" ..name.. "_win_lg_open", win_lg_open_def)
+	
 	--
 	-- Crafting
 	--
+			
 	minetest.register_craft({
 		output = "c_doors:dbl_" ..name.. "_win_lg",
 		recipe = {
@@ -301,7 +303,7 @@ for _, row in ipairs(c_doors.windowed) do
 	})
 
 	minetest.register_craft({
-		output = "c_doors:dbl_" ..name.. "_win_sml 4",
+		output = "c_doors:dbl_" ..name.. "_win_sml 16",
 		recipe = {
 			{ craft_material , "default:glass", craft_material},
 			{"default:glass", "", "default:glass"},

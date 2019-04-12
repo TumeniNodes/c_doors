@@ -9,7 +9,7 @@ c_doors.door = {
 		default.node_sound_metal_defaults(), 
 		"c_doors_metal", 
 		{name = "doors_door_steel.png", backface_culling = true}, 
-		"default:steelblock"
+		{"default:steel_ingot", "doors:door_steel"}
 	},
 	{
 		"obsidian_glass", 
@@ -18,7 +18,7 @@ c_doors.door = {
 		default.node_sound_glass_defaults(), 
 		"c_doors_glass", 
 		{name = "doors_door_obsidian_glass.png"},
-		"default:obsidian_glass"
+		{"default:obsidian_glass", "doors:door_obsidian_glass"}
 	},
 	{
 		"glass", 
@@ -27,7 +27,7 @@ c_doors.door = {
 		default.node_sound_glass_defaults(), 
 		"c_doors_glass", 
 		{name = "doors_door_glass.png"}, 
-		"default:glass"
+		{"default:glass", "doors:door_glass"}
 	},
 	{
 		"wood", 
@@ -36,7 +36,7 @@ c_doors.door = {
 		default.node_sound_wood_defaults(), 
 		"doors_door", 
 		{name = "doors_door_wood.png", backface_culling = true}, 
-		"default:wood"
+		{"default:wood", "doors:door_wood"}
 	},
 }
 
@@ -264,14 +264,39 @@ for _, row in ipairs(c_doors.door) do
 	--
 	-- Crafting
 	--
-	minetest.register_craft({
-		output = "c_doors:" ..name.. "_Ldoor",
-		recipe = {
-			{"", craft_material , ""},
-			{"", craft_material, ""},
-			{"", craft_material , ""},
-		}
-	})
+	
+	if c_doors.from_doors then
+	
+		-- make centered doors out of regular ones
+		minetest.register_craft({
+			output = "c_doors:" ..name.. "_Ldoor",
+			recipe = {
+				{"", "default:stick",   ""},
+				{"", craft_material[2], ""},
+				{"", "default:stick",   ""},
+			}
+		})
+		
+		-- register recipe to undo the transformation
+		minetest.register_craft({
+			output = craft_material[2] .. " 2",
+			recipe = {
+				{"c_doors:" ..name.. "_Ldoor", "c_doors:" ..name.. "_Rdoor"},
+			}
+		})
+	
+	else
+	
+		minetest.register_craft({
+			output = "c_doors:" ..name.. "_Ldoor",
+			recipe = {
+				{"", craft_material[1], ""},
+				{"", craft_material[1], ""},
+				{"", craft_material[1], ""},
+			}
+		})
+	
+	end
 
 	minetest.register_craft({
 		output = "c_doors:" ..name.. "_Rdoor",

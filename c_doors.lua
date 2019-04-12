@@ -43,6 +43,26 @@ c_doors.door = {
 	},
 }
 
+c_doors.open = function (pos, name, side, door_sound)
+	local node = minetest.get_node(pos)
+	if not side or side == "L" then
+		minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Ldoor_open", param2 = node.param2})
+	elseif side == "R" or side then
+		minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Rdoor_open", param2 = node.param2})
+	end
+	minetest.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
+end
+
+c_doors.close = function (pos, name, side, door_sound)
+	local node = minetest.get_node(pos)
+	if not side or side == "L" then
+		minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Ldoor", param2 = node.param2})
+	elseif side == "R" or side then
+		minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Rdoor", param2 = node.param2})
+	end
+	minetest.sound_play(door_sound.."_close", {gain = 0.15, max_hear_distance = 2})
+end
+
 for _, row in ipairs(c_doors.door) do
 	local name = row[1]
 	local desc = row[2]
@@ -80,10 +100,28 @@ for _, row in ipairs(c_doors.door) do
 			},
 		},
 		on_rightclick = function(pos, node, puncher)
-			minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Ldoor_open", param2 = node.param2})
-			minetest.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
+			c_doors.open(pos, name, "L", door_sound)
 		end,
 	}
+	
+-- 	if minetest.get_modpath("mesecons") then
+-- 		Ldoor_def.mesecons = {
+-- 			effector = {
+-- 				action_on = function(pos, node)
+-- 					local door = doors.get(pos)
+-- 					if door then
+-- 						door:open()
+-- 					end
+-- 				end,
+-- 				action_off = function(pos, node)
+-- 					local door = doors.get(pos)
+-- 					if door then
+-- 						door:close()
+-- 					end
+-- 				end,
+-- 				rules = mesecon.rules.pplate
+-- 			}}
+-- 	end
 	
 	minetest.register_node("c_doors:" ..name.. "_Ldoor", Ldoor_def)
 
@@ -114,8 +152,7 @@ for _, row in ipairs(c_doors.door) do
 			},
 		},
 		on_rightclick = function(pos, node, puncher)
-			minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Ldoor", param2 = node.param2})
-			minetest.sound_play(door_sound.."_close", {gain = 0.15, max_hear_distance = 2})
+			c_doors.close(pos, name, "L", door_sound)
 		end,
 	}
 	
@@ -149,8 +186,7 @@ for _, row in ipairs(c_doors.door) do
 			},
 		},
 		on_rightclick = function(pos, node, puncher)
-			minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Rdoor_open", param2 = node.param2})
-			minetest.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
+			c_doors.open(pos, name, "R", door_sound)
 		end,
 	}
 	
@@ -183,8 +219,7 @@ for _, row in ipairs(c_doors.door) do
 			},
 		},
 		on_rightclick = function(pos, node, puncher)
-			minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Rdoor", param2 = node.param2})
-			minetest.sound_play(door_sound.."_close", {gain = 0.15, max_hear_distance = 2})
+			c_doors.close(pos, name, "R", door_sound)
 		end,
 	}
 	

@@ -48,7 +48,7 @@ c_doors.open = function (pos, node, name, side, door_sound)
 	elseif side == "R" or side then
 		minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Rdoor_open", param2 = node.param2})
 	end
-	minetest.sound_play(door_sound.."_open", {gain = 0.20, max_hear_distance = 2})
+	minetest.sound_play(door_sound.."_open", {pos = pos, gain = 0.20, max_hear_distance = 10})
 end
 
 c_doors.close = function (pos, node, name, side, door_sound)
@@ -57,7 +57,7 @@ c_doors.close = function (pos, node, name, side, door_sound)
 	elseif side == "R" or side then
 		minetest.swap_node(pos, {name = "c_doors:" ..name.. "_Rdoor", param2 = node.param2})
 	end
-	minetest.sound_play(door_sound.."_close", {gain = 0.15, max_hear_distance = 2})
+	minetest.sound_play(door_sound.."_close", {pos = pos, gain = 0.15, max_hear_distance = 10})
 end
 
 

@@ -36,12 +36,12 @@ c_doors.windowed = {
 -- open and close actions as generalized functions
 c_doors.window_open = function (pos, node, name, size)
 	minetest.swap_node(pos, {name = "c_doors:dbl_" ..name.. "_win_" .. size .. "_open", param2 = node.param2})
-	minetest.sound_play("c_doors_glass_open", {gain = 0.50, max_hear_distance = 2})
+	minetest.sound_play("c_doors_glass_open", {pos = pos, gain = 0.50, max_hear_distance = 10})
 end
 
 c_doors.window_close = function (pos, node, name, size)
 	minetest.swap_node(pos, {name = "c_doors:dbl_" ..name.. "_win_" .. size, param2 = node.param2})
-	minetest.sound_play("c_doors_glass_close", {gain = 0.30, max_hear_distance = 2})
+	minetest.sound_play("c_doors_glass_close", {pos = pos, gain = 0.30, max_hear_distance = 10})
 end
 
 

@@ -109,9 +109,9 @@ for _, row in ipairs(c_doors.door) do
 				action_on = function(pos, node)
 					c_doors.open(pos, node, name, "L", door_sound)
 				end,
-				action_off = function(pos, node)
-					c_doors.close(pos, node, name, "L", door_sound)
-				end,
+-- 				action_off = function(pos, node)
+-- 					c_doors.close(pos, node, name, "L", door_sound)
+-- 				end,
 				rules = mesecon.rules.pplate
 			}
 		}
@@ -153,9 +153,9 @@ for _, row in ipairs(c_doors.door) do
 	if minetest.get_modpath("mesecons") then
 		Ldoor_open_def.mesecons = {
 			effector = {
-				action_on = function(pos, node)
-					c_doors.open(pos, node, name, "L", door_sound)
-				end,
+-- 				action_on = function(pos, node)
+-- 					c_doors.open(pos, node, name, "L", door_sound)
+-- 				end,
 				action_off = function(pos, node)
 					c_doors.close(pos, node, name, "L", door_sound)
 				end,
@@ -204,9 +204,9 @@ for _, row in ipairs(c_doors.door) do
 				action_on = function(pos, node)
 					c_doors.open(pos, node, name, "R", door_sound)
 				end,
-				action_off = function(pos, node)
-					c_doors.close(pos, node, name, "R", door_sound)
-				end,
+-- 				action_off = function(pos, node)
+-- 					c_doors.close(pos, node, name, "R", door_sound)
+-- 				end,
 				rules = mesecon.rules.pplate
 			}
 		}
@@ -248,9 +248,9 @@ for _, row in ipairs(c_doors.door) do
 	if minetest.get_modpath("mesecons") then
 		Rdoor_open_def.mesecons = {
 			effector = {
-				action_on = function(pos, node)
-					c_doors.open(pos, node, name, "R", door_sound)
-				end,
+-- 				action_on = function(pos, node)
+-- 					c_doors.open(pos, node, name, "R", door_sound)
+-- 				end,
 				action_off = function(pos, node)
 					c_doors.close(pos, node, name, "R", door_sound)
 				end,

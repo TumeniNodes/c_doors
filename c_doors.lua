@@ -73,8 +73,8 @@ for _, row in ipairs(c_doors.door) do
 
 	local Ldoor_def = {
 		description = desc.. " Door (left)",
-		inventory_image = "doors_item_" ..name.. ".png",
-		wield_image = "doors_item_" ..name.. ".png",
+		inventory_image = "doors_item_" ..name.. ".png^[transformFXX",
+		wield_image = "doors_item_" ..name.. ".png^[transformFXX",
 		drawtype = "mesh",
 		mesh = "c_door_L.obj",
 		tiles = {door_tiles},

@@ -95,9 +95,6 @@ for _, row in ipairs(c_doors.windowed) do
 				action_on = function(pos, node)
 					c_doors.window_open(pos, node, name, "sml")
 				end,
--- 				action_off = function(pos, node)
--- 					c_doors.window_close(pos, node, name, "sml")
--- 				end,
 				rules = mesecon.rules.pplate
 			}
 		}
@@ -154,9 +151,6 @@ for _, row in ipairs(c_doors.windowed) do
 	if minetest.get_modpath("mesecons") then
 		win_sml_open_def.mesecons = {
 			effector = {
--- 				action_on = function(pos, node)
--- 					c_doors.window_open(pos, node, name, "sml")
--- 				end,
 				action_off = function(pos, node)
 					c_doors.window_close(pos, node, name, "sml")
 				end,
@@ -213,9 +207,6 @@ for _, row in ipairs(c_doors.windowed) do
 				action_on = function(pos, node)
 					c_doors.window_open(pos, node, name, "lg")
 				end,
--- 				action_off = function(pos, node)
--- 					c_doors.window_close(pos, node, name, "lg")
--- 				end,
 				rules = mesecon.rules.pplate
 			}
 		}
@@ -277,9 +268,6 @@ for _, row in ipairs(c_doors.windowed) do
 	if minetest.get_modpath("mesecons") then
 		win_lg_open_def.mesecons = {
 			effector = {
--- 				action_on = function(pos, node)
--- 					c_doors.window_open(pos, node, name, "lg")
--- 				end,
 				action_off = function(pos, node)
 					c_doors.window_close(pos, node, name, "lg")
 				end,

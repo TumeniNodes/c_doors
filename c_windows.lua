@@ -28,7 +28,7 @@ c_doors.windowed = {
 		"Wood", 
 		"c_doors_dble_wood_sides.png", 
 		"c_doors_dble_wood.png", 
-		"default:wood"
+		"group:wood"
 	},
 }
 

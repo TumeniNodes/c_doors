@@ -36,7 +36,7 @@ c_doors.door = {
 		default.node_sound_wood_defaults(), 
 		"doors_door", 
 		{name = "doors_door_wood.png", backface_culling = true}, 
-		{"default:wood", "doors:door_wood"}
+		{"group:wood", "doors:door_wood"}
 	},
 }
 
